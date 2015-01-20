@@ -1,0 +1,7 @@
+node_modules/
+test/
+.gitignore
+.jshintrc
+.jscsrc
+.jshintignore
+gulpfile.js

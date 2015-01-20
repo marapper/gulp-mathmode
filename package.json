@@ -1,0 +1,55 @@
+{
+  "name": "gulp-mathmode",
+  "description": "Turns LaTeX math expressions into images.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jmendiara/grunt-gjslint",
+  "author": {
+    "name": "Sergey Bondar",
+    "email": "msnre@yandex.ru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marapper/gulp-mathmode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marapper/gulp-mathmode/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/marapper/gulp-mathmode/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "./src/index.js",
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "dependencies": {
+    "mathmode": "~0.0.4",
+    "gulp-util": "~3.0",
+    "object-assign": "~2.0",
+    "through2": "~0.6",
+    "chalk": "~0.5"
+  },
+  "devDependencies": {
+    "gulp": "~3.8",
+    "gulp-jscs": "~1.4",
+    "jshint-stylish": "~1.0",
+    "gulp-jshint": "~1.9",
+    "gulp-rename": "~1.2",
+    "gulp-clean": "~0.3"
+  },
+  "peerDependencies": {
+    "gulp": ">=3.8"
+  },
+  "keywords": [
+    "latex",
+    "math",
+    "mathmode",
+    "gruntplugin"
+  ],
+  "readme": "# grunt-mathmode\n\nTurn LaTeX math expressions into images.\n\nBased on [mathmode](https://www.npmjs.com/package/mathmode).\n\n## Install\n\nInstall with npm.\n\n```\nnpm install --save-dev gulp-mathmode\n```\n\n## LaTeX math expressions\n\n[List of possible math](http://en.wikibooks.org/wiki/LaTeX/Mathematics)\n\n### Usage Examples\n\nTurns list of tex-files into png-images with the same names.    \n\n```js\nvar srcPath = 'src/**/*.tex';\nvar buildPath = 'build/**/*.tex';\n\ngulp.task('clean', function () {\n    var clean = require('gulp-clean');\n    return gulp.src(buildPath + '/*.png', {read: false})\n        .pipe(clean());\n});\n\ngulp.task('math', ['clean'], function () {\n    var math = require('gulp-mathmode'),\n        rename = require(\"gulp-rename\");\n    gulp.src(srcPath)\n        .pipe(math({\n            format: format,\n            dpi: 300\n        }))\n        .pipe(rename({extname: '.' + format}))\n        .pipe(gulp.dest(buildPath));\n});\n```\n\n### Configuration\n\nLook at [mathmode configs](https://www.npmjs.com/package/mathmode).\n\n```js\nrequire('gulp-mathmode')({\n    format: 'png',\n    dpi: 300,\n    packages: [\"amsmath\"],\n    macros: \"\",\n    pdflatex_path: \"pdflatex\",\n    imagemagick_path: \"convert\"\n}\n```\n",
+  "readmeFilename": "README.md",
+  "_id": "gulp-mathmode@0.1",
+  "_from": "gulp-mathmode@>~0.1"
+}

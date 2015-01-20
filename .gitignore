@@ -1,0 +1,46 @@
+node_modules/
+vendor/
+.idea
+
+test/build/*
+
+*.log
+
+.buildpath
+.project
+.metadata
+bin/
+tmp/
+*.kate-swp
+*.tmp
+*.bak
+*.save
+*.swp
+*~.nib
+*~
+*#
+local.properties
+.classpath
+.settings
+.loadpath
+
+# TeamCity is a build add-in
+_TeamCity*
+
+# DotCover is a Code Coverage Tool
+*.dotCover
+
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac crap
+.Trashes
+.DS_Store
+.DS_Store?
+
