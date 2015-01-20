@@ -44,12 +44,12 @@ module.exports = function(options) {
 
             stream.on('data', function(data) {
                 file.contents = Buffer.concat([data, file.contents]);
-
-                cb(null, file);
             });
             stream.on('error', function(err) {
                 out.push(err.message.replace('null:', file.relative + ':'));
-                cb();
+            });
+            stream.on('end', function () {
+                cb(null, file);
             });
 
         } catch (err) {

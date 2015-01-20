@@ -1,7 +1,7 @@
 {
   "name": "gulp-mathmode",
   "description": "Turns LaTeX math expressions into images.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/jmendiara/grunt-gjslint",
   "author": {
     "name": "Sergey Bondar",
