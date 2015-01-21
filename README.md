@@ -110,3 +110,25 @@ require('gulp-mathmode')({
     imagemagick_path: "convert"
 }
 ```
+
+### Кириллица и русский текст
+
+Установить дополнительно
+
+```
+sudo apt-get install texlive-latex-extra texlive-math-extra texlive-lang-cyrillic texlive-fonts-extra 
+```
+
+И использовать с дополнительными параметром
+
+```js
+require('gulp-mathmode')({
+    packages: [
+        "amsmath", "mathtext", 
+        ['fontenc', 'T1,T2A'], ['inputenc', 'utf8x'], ['babel', 'english,russian']
+    ],
+    macros: "",
+    format: format,
+    dpi: 200
+})
+```
